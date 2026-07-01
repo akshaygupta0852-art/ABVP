@@ -161,13 +161,24 @@ const abvpQuizData = [
   },
 ];
 
+// Port variable
+
+let port = "http://localhost:5000"; // Default port for local development
+
 // variable initialization
 
-const memberDailog = document.getElementById("memberDialog");
-const memberDailogClose = document.getElementById("closeDialog");
-const memberDailogOpen = document.getElementById("addMember");
-const schoolCollegeSelect = document.getElementById("schoolCollege");
 const aboutSection = document.getElementById("about");
+const memberDailog = document.getElementById("memberDialog");
+const submitButton = document.getElementById("memberSubmit");
+const memberDailogOpen = document.getElementById("addMember");
+const memberDailogClose = document.getElementById("closeDialog");
+const schoolCollegeSelect = document.getElementById("schoolCollege");
+const adminLoginButton = document.getElementById("adminPanel");
+const adminLoginDialog = document.getElementById("adminLoginDialog");
+const adminLoginClose = document.getElementById("closeAdminDialog");
+const adminLoginSubmit = document.getElementById("adminSubmit");
+const showPassword = document.getElementById("showPassword");
+const adminPasswordInput = document.getElementById("adminPassword");
 
 // add member dialog open and close event listeners
 
@@ -199,3 +210,101 @@ aboutSection.innerHTML += abvpQuizData
       </div>`,
   )
   .join("");
+
+// Member form submission event listener
+
+submitButton.addEventListener("click", async (e) => {
+  e.preventDefault();
+  let isLoading = true; // Set loading state to true
+  if (isLoading) {
+    submitButton.disabled = true; // Disable the button while loading
+    submitButton.textContent = "Submitting..."; // Change button text to indicate loading
+    submitButton.style.backgroundColor = "#ccc"; // Change button color to indicate loading
+    submitButton.style.cursor = "not-allowed"; // Change cursor to indicate loading
+    submitButton.style.pointerEvents = "none"; // Prevent pointer events while loading
+  }
+
+  const name = document.getElementById("name").value;
+  const mobile = document.getElementById("mobileNo").value;
+  const address = document.getElementById("address").value;
+  const schoolCollege = document.getElementById("schoolCollege").value;
+  const pincode = document.getElementById("pincode").value;
+
+  const userData = {
+    name: name,
+    mobile: mobile,
+    address: address,
+    schoolCollege: schoolCollege,
+    pincode: pincode,
+  };
+
+  try {
+    const response = await fetch(`${port}/api/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+    if (response.ok) {
+      isLoading = false; // Set loading state to false
+      console.log("Form submitted successfully");
+      console.log("Response:", await response.json());
+      memberDailog.close();
+    }
+  } catch (err) {
+    console.error("Error submitting form:", err);
+  }
+});
+
+// Admin login dialog open and close event listeners
+
+adminLoginButton.addEventListener("click", () => {
+  adminLoginDialog.showModal();
+});
+adminLoginClose.addEventListener("click", () => {
+  adminLoginDialog.close();
+});
+
+// Show/hide password functionality
+
+showPassword.addEventListener("change", () => {
+  if (showPassword.checked) {
+    adminPasswordInput.type = "text";
+  } else {
+    adminPasswordInput.type = "password";
+  }
+});
+
+// Admin login form submission event listener
+
+adminLoginSubmit.addEventListener("click", async (e) => {
+  e.preventDefault();
+  let isLoading = true; // Set loading state to true
+  if (isLoading) {
+    adminLoginSubmit.disabled = true; // Disable the button while loading
+    adminLoginSubmit.textContent = "Logging in..."; // Change button text to indicate loading
+    adminLoginSubmit.style.backgroundColor = "#ccc"; // Change button color to indicate loading
+    adminLoginSubmit.style.cursor = "not-allowed"; // Change cursor to indicate loading
+    adminLoginSubmit.style.pointerEvents = "none"; // Prevent pointer events while loading
+  }
+try{  const username = document.getElementById("adminMobile").value;
+  const password = document.getElementById("adminPassword").value;
+
+  const response = await fetch(`${port}/api/admin/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  });
+  if (response.ok) {
+    isLoading = false; // Set loading state to false
+    console.log("Admin login successful");
+    console.log("Response:", await response.json());
+    adminLoginDialog.close();
+  }}
+  catch(err){
+    console.error("Error during admin login:", err)
+  }
+});
