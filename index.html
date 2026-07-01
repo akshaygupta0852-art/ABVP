@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABVP : online membership portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='icon' href='resources/download.png' type='image/png'/>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="resources/download.png" alt="ABVP Logo">
+            <h3>ABVP</h3>
+        </div>
+        <ul class="nav-links">
+            <li id="addMember">Be a member</li>
+            <li id="adminPanel">Admin panel</li>
+        </ul>
+    </nav>
+
+    <!-- About section -->
+
+    <section id="about">
+        
+    </section>
+
+    <!-- Be a member section -->
+
+    <dialog id="memberDialog">
+        <button id="closeDialog" aria-label="Close">&times;</button>
+        <form method="dialog" id="memberForm">
+            <h2>Be a member</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autocomplete="on">
+            
+            <label for="mobileNo">Mobile:</label>
+            <input type="number" id="mobileNo" name="mobileNo" required autocomplete="on">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required autocomplete="on">
+
+            <label for="schoolCollege">School/College:</label>
+            <select name="schoolCollege" id="schoolCollege" required>
+                <option value="" disabled selected>Select your school/college</option>
+            </select>
+
+            <label for="pincode">Pincode :</label>
+            <input type="number" name="pincode" id="pincode" required autocomplete="on">
+
+            <button type="submit">Submit</button>
+        </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
