@@ -1,114 +1,281 @@
 // School and college array
 
-const schoolArray = [
-  {
-    name: "Government Chhatrasal Post Graduate College",
-    type: "College",
-    category: "Government",
-    location: "Benisagar Mohalla, Panna",
-    courses: ["UG", "PG", "Arts", "Science", "Commerce"],
+const schoolArray = [{
+    name: "PM SHRI Kendriya Vidyalaya Panna",
+    level: "School",
+    type: "Government (Central)",
+    affiliation: "CBSE",
+    category: "Co-ed Secondary/Higher Secondary",
+    location: "Benisagar Mohalla, Panna Tehsil"
   },
   {
-    name: "Government Girls Post Graduate College",
-    type: "College",
-    category: "Government",
-    location: "Panna Town",
-    courses: ["UG", "PG", "Arts", "Commerce"],
+    name: "Jawahar Navodaya Vidyalaya Panna",
+    level: "School",
+    type: "Government (Central/Boarding)",
+    affiliation: "CBSE",
+    category: "Co-ed Secondary/Higher Secondary",
+    location: "Ramkhiriya, Janakpur, Panna Tehsil"
   },
   {
-    name: "Government Polytechnic College",
-    type: "College",
-    category: "Government",
-    location: "Civil Line, Janakpur, Panna",
-    courses: ["Diploma in Engineering"],
+    name: "C. M. Rise School Panna",
+    level: "School",
+    type: "Government (State)",
+    affiliation: "MP Board",
+    category: "Exemplar Co-ed Higher Secondary",
+    location: "Panna Town, Panna Tehsil"
   },
   {
-    name: "Government Degree College, Amanganj",
-    type: "College",
-    category: "Government",
-    location: "Amanganj, Panna",
-    courses: ["UG Degrees"],
+    name: "Government Excellence School Panna",
+    level: "School",
+    type: "Government (State)",
+    affiliation: "MP Board",
+    category: "Exemplar Co-ed Higher Secondary",
+    location: "Panna Town, Panna Tehsil"
   },
   {
-    name: "Government College, Pawai",
-    type: "College",
-    category: "Government",
-    location: "Pawai, Panna",
-    courses: ["UG Degrees"],
-  },
-  {
-    name: "Swami Vivekanand Mahavidyalaya",
-    type: "College",
-    category: "Private",
-    location: "Janakpur, Panna",
-    courses: ["UG Degrees", "Education/B.Ed"],
-  },
-  {
-    name: "Maharaja Agrasen Mahavidyalaya",
-    type: "College",
-    category: "Private",
-    location: "Janakpur Road, Panna",
-    courses: ["UG Degrees"],
-  },
-
-  // --- SCHOOLS ---
-  {
-    name: "PM Shri Kendriya Vidyalaya (KV)",
-    type: "School",
-    category: "Central Government (CBSE)",
-    location: "Bus Stand Road, Benisagar Mohalla, Panna",
-    levels: "Primary to Senior Secondary",
-  },
-  {
-    name: "Jawahar Navodaya Vidyalaya (JNV)",
-    type: "School",
-    category: "Central Government (CBSE)",
-    location: "Gahra, Janakpur, Panna",
-    levels: "Secondary to Senior Secondary",
+    name: "Government Model School Panna",
+    level: "School",
+    type: "Government (State)",
+    affiliation: "MP Board",
+    category: "Co-ed Higher Secondary",
+    location: "Chhatarpur Bypass Road, Panna Tehsil"
   },
   {
     name: "Lisieux Anand Higher Secondary School",
-    type: "School",
-    category: "Private (CBSE/English Medium)",
-    location: "NH-75, Irrigation Colony, Panna",
-    levels: "Nursery to Senior Secondary",
+    level: "School",
+    type: "Private",
+    affiliation: "CBSE",
+    category: "Co-ed English Medium",
+    location: "NH-75, Irrigation Colony, Panna Tehsil"
   },
   {
-    name: "DAV Public School",
-    type: "School",
-    category: "Private (CBSE)",
-    location: "NMDC Diamond Mining Project, Majhgawan, Panna",
-    levels: "Primary to Senior Secondary",
+    name: "Maharishi Vidya Mandir School",
+    level: "School",
+    type: "Private",
+    affiliation: "CBSE",
+    category: "Co-ed English Medium",
+    location: "Padikheda Road, Janakpur, Panna Tehsil"
   },
   {
-    name: "Maharishi Vidya Mandir",
-    type: "School",
-    category: "Private (CBSE)",
-    location: "Padikheda Road, Janakpur, Panna",
-    levels: "Primary to Senior Secondary",
+    name: "Blue Sky National School",
+    level: "School",
+    type: "Private",
+    affiliation: "CBSE / State Board",
+    category: "Co-ed English Medium",
+    location: "Ajaygarh Bypass Road, Purana Panna"
+  },
+  {
+    name: "Royal Public School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Secondary",
+    location: "SH 49, Benisagar Mohalla, Panna Tehsil"
+  },
+  {
+    name: "St. Joseph Convent School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Primary/Secondary",
+    location: "Ranigunj Mohalla, Panna Tehsil"
   },
   {
     name: "National Public School",
-    type: "School",
-    category: "Private",
-    location: "Civil Line Road, Janakpur, Panna",
-    levels: "Primary to Higher Secondary",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Secondary",
+    location: "Civil Line Road, Janakpur, Panna Tehsil"
   },
   {
-    name: "Government Excellence School (RP Excellence)",
-    type: "School",
-    category: "State Government",
-    location: "Panna Town",
-    levels: "Secondary to Senior Secondary",
+    name: "Sri Aurobindo English Hr Sec School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Higher Secondary",
+    location: "Gandhi Chowk, Agra Mohalla, Panna Tehsil"
   },
   {
-    name: "Sri Aurobindo English Higher Secondary School",
-    type: "School",
-    category: "Private",
-    location: "Gandhi Chowk, Agra Mohalla, Panna",
-    levels: "Primary to Higher Secondary",
+    name: "The Modern Public School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Secondary",
+    location: "Haripad-Chatterji Marg, Benisagar Mohalla, Panna Tehsil"
   },
-];
+  {
+    name: "Gurukul High Secondary School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Higher Secondary",
+    location: "Raja Babu Colony, Janakpur, Panna Tehsil"
+  },
+  {
+    name: "RP Excellence School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Secondary",
+    location: "Deendayal Upadhyay Nagar, Panna Tehsil"
+  },
+  {
+    name: "The Mother Convent English School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Primary/Middle",
+    location: "Ajaygarh Road, Janakpur, Panna Tehsil"
+  },
+  {
+    name: "Shree Maya Public School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Primary/Middle",
+    location: "Benisagar Mohalla, Panna Tehsil"
+  },
+  {
+    name: "Maharaja Chhatrasal Residential School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Residential Co-ed Secondary",
+    location: "Pahadi Kheda Road, Panna Tehsil"
+  },
+  {
+    name: "Children Public Hr. Sec. School",
+    level: "School",
+    type: "Private",
+    affiliation: "State Board",
+    category: "Co-ed Higher Secondary",
+    location: "Rani Bagh Road, Civil Line, Panna Tehsil"
+  },
+  {
+    name: "D.A.V. Public School",
+    level: "School",
+    type: "Private/Corporate",
+    affiliation: "CBSE",
+    category: "Co-ed Secondary/Higher Secondary",
+    location: "NMDC Diamond Mining Project, Majhgawan, Panna Tehsil"
+  },
+
+  // ==========================================
+  // COLLEGES & INSTITUTES (Panna Tehsil)
+  // ==========================================
+  {
+    name: "Government Chhatrasal Post Graduate College",
+    level: "College",
+    type: "Government",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University (MCBU)",
+    category: "Degree College (Arts, Science, Commerce)",
+    location: "Bus Stand Road, Benisagar Mohalla, Panna Town"
+  },
+  {
+    name: "Government Girls Post Graduate College",
+    level: "College",
+    type: "Government",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University (MCBU)",
+    category: "Degree College (Exclusively for Women)",
+    location: "Bada Bazar, Kishor Ganj, Panna Town"
+  },
+  {
+    name: "Government Polytechnic College Panna",
+    level: "College",
+    type: "Government",
+    affiliation: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+    category: "Engineering & Technical Diploma",
+    location: "Civil Line, Janakpur, Panna Town"
+  },
+  {
+    name: "Swami Vivekanand Mahavidyalaya",
+    level: "College",
+    type: "Private",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University / NCTE",
+    category: "Degree & Teacher Education (B.Ed/D.El.Ed)",
+    location: "Indrapuri Colony, Near RSS Ground, Janakpur, Panna Town"
+  },
+  {
+    name: "Maharishi Vidya Mandir Mahavidyalaya",
+    level: "College",
+    type: "Private",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University (MCBU)",
+    category: "Degree College",
+    location: "Janakpur Road, Panna Town"
+  },
+  {
+    name: "Maharaja Chhatrasal Shiksha Mahavidyalaya",
+    level: "College",
+    type: "Private",
+    affiliation: "NCTE Approved",
+    category: "Teacher Training / Education",
+    location: "Panna Road, Janakpur, Panna Town"
+  },
+  {
+    name: "Vaishnav Mata Mahavidyalaya",
+    level: "College",
+    type: "Private",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University (MCBU)",
+    category: "Degree College",
+    location: "Civil Line Road, Benisagar Mohalla, Panna Town"
+  },
+  {
+    name: "Maharaja Agrasen Mahavidyalaya",
+    level: "College",
+    type: "Private",
+    affiliation: "Maharaja Chhatrasal Bundelkhand University (MCBU)",
+    category: "Degree College",
+    location: "Janakpur Road, Tikuriya Mohalla, Panna Town"
+  },
+  {
+    name: "Sudama Paramedical & Nursing College",
+    level: "College",
+    type: "Private",
+    affiliation: "M.P. Medical Science University (MPMSU)",
+    category: "Medical / Nursing / Allied Health",
+    location: "Agra Mohalla, Panna Town"
+  },
+  {
+    name: "Panna Institute Of Computer Science",
+    level: "College",
+    type: "Private",
+    affiliation: "Makhanlal Chaturvedi National University (MCU)",
+    category: "IT & Computer Applications",
+    location: "Janakpur Road, Panna Town"
+  },
+  {
+    name: "Government ITI Panna",
+    level: "College",
+    type: "Government",
+    affiliation: "NCVT / NCVET",
+    category: "Vocational / Technical Training",
+    location: "Panna Town"
+  },
+  {
+    name: "Vaishnav Mata Private ITI",
+    level: "College",
+    type: "Private",
+    affiliation: "NCVT",
+    category: "Vocational / Technical Training",
+    location: "Near NMDC Colony, Ranibagh, Panna Town"
+  },
+  {
+    name: "Vishwakarma Private ITI",
+    level: "College",
+    type: "Private",
+    affiliation: "NCVT",
+    category: "Vocational / Technical Training",
+    location: "Opposite Benisagar Pond, Hospital Road, Panna Town"
+  },
+  {
+    name: "Vivekananda Private ITI",
+    level: "College",
+    type: "Private",
+    affiliation: "NCVT",
+    category: "Vocational / Technical Training",
+    location: "Near RSS Ground, Indrapuri Colony, Panna Town"
+  }]
 
 // About the ABVP organization
 
