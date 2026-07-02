@@ -512,6 +512,7 @@ try{  const username = document.getElementById("adminMobile").value;
   if (response.ok) {
     getData();
     isLoading = false; // Set loading state to false
+    loader(isLoading, adminLoginSubmit);
     console.log("Admin login successful");
     console.log("Response:", await response.json());
     adminPanel.showModal();
