@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+*::-webkit-scrollbar{
+  appearance: none;
+  display: none;
 }
 html,
 body {
@@ -23,6 +27,12 @@ nav {
   align-items: center;
   padding: 0 20px;
 }
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Navigation bar */
+
 .logo {
   display: flex;
   align-items: center;
@@ -47,6 +57,9 @@ nav {
 .nav-links li:hover {
   color: #0056b3;
 }
+
+/* Member Dialog */
+
 #memberDialog {
   position: fixed;
   top: 0;
@@ -115,6 +128,9 @@ nav {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/* About Section  */
+
 #about {
   padding: 20px;
   display: flex;
@@ -129,6 +145,9 @@ nav {
   flex-direction: column;
   gap: 10px;
 }
+
+/* Admin Login Dialog */
+
 #adminLoginDialog {
   position: fixed;
   top: 0;
@@ -198,4 +217,68 @@ nav {
   width: 20px;
   height: 20px;
   cursor: pointer;
-};
+}
+
+/* Admin Panel Dialog */
+
+#adminPanelDialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white;
+  border: none;
+  padding: 10px;
+}
+#closeAdminPanelDialog {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 90%;
+  outline: none;
+  margin-bottom: 20px;
+}
+#closeAdminPanelDialog:hover{
+  transform: rotate(90deg);
+  scale: 1.2;
+}
+table{
+  margin-top: 30px;
+  overflow: scroll;
+  height: 80vh;
+  width: 97vw;
+}
+th{
+  font-weight: 600;
+  text-align: left;
+}
+.serialNo{
+  width: 60px;
+  padding: 6px;
+}
+.tableName{
+  padding: 6px;
+  width: 250px;
+  text-transform: lowercase;
+}
+.tableMobile{
+  padding: 6px;
+  width: 150px;
+}
+.tableSchool{
+  padding: 6px;
+  width: 300px;
+}
+.tableAddress{
+  padding: 6px;
+  width: 300px;
+}

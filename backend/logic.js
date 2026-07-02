@@ -14,6 +14,8 @@ mongoose.connect(dbURI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
+// DB schema
+
 const userSchema = mongoose.Schema({
   name: {type: String, required : true},
   mobile: {type: Number, unique: true, required : true},
@@ -21,8 +23,10 @@ const userSchema = mongoose.Schema({
   schoolCollege:  {type: String, required : true},
   pincode: {type: Number, required : true},
 });
-
 const users = mongoose.model("users", userSchema);
+
+// new member save
+
 app.post("/api/users", async (req, res) => {
   const { name, mobile, address, schoolCollege, pincode } = req.body;
 
@@ -36,6 +40,8 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
+// admin login logic here
+
 app.post("/api/admin/login", (req, res) => {
   const { username, password } = req.body;
   // Add your admin login logic here
@@ -45,6 +51,21 @@ app.post("/api/admin/login", (req, res) => {
       res.status(401).json({ message: "Invalid credentials" });
     }
 });
+
+// Send database data
+
+app.get("/api/admin/fetchdata", async (req,res)=>{
+  try{
+    const studentDetails = await users.find();
+    res.status(200).json(studentDetails);
+  }
+  catch(err){
+    console.log('Error appeared while fetching data', err);
+    res.status(500).json({error: 'Failed to fetch student data'})
+  }
+})
+
+// server listen
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

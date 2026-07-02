@@ -94,12 +94,28 @@
         />
 
         <div>
-            <input type="checkbox" id="showPassword" />
-            <label for="showPassword">Show Password</label>
+          <input type="checkbox" id="showPassword" />
+          <label for="showPassword">Show Password</label>
         </div>
 
         <button id="adminSubmit" type="submit">Login</button>
       </form>
+    </dialog>
+
+    <!-- Admin panel dialog -->
+
+    <dialog id="adminPanelDialog">
+      <button id="closeAdminPanelDialog" aria-label="Close">&times;</button>
+      <h2>Member List</h2>
+      <table border="2" id="studentData">
+        <tr>
+          <th class="serialNo">S. no.</th>
+          <th class="tableName">Name</th>
+          <th class="tableMobile">Mobile No.</th>
+          <th class="tableSchool">School/college</th>
+          <th class="tableAddress">Address</th>
+        </tr>
+      </table>
     </dialog>
 
     <script src="script.js"></script>

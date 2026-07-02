@@ -179,6 +179,31 @@ const adminLoginClose = document.getElementById("closeAdminDialog");
 const adminLoginSubmit = document.getElementById("adminSubmit");
 const showPassword = document.getElementById("showPassword");
 const adminPasswordInput = document.getElementById("adminPassword");
+const adminPanel = document.getElementById('adminPanelDialog');
+const clsAdminPanel = document.getElementById('closeAdminPanelDialog');
+const dataTable = document.getElementById('studentData');
+
+
+// fetching data
+
+async function getData() {
+  let x = 0;
+  const response = await fetch(`${port}/api/admin/fetchdata`,{
+    method : 'GET'
+  });
+  const data = await response.json();
+  console.log(data)
+  dataTable.innerHTML += data.map((stu)=>{
+    x++;
+    return `<tr>
+          <td class="serialNo">${x}.</td>
+          <td class="tableName">${stu.name}</td>
+          <td class="tableMobile">${stu.mobile}</td>
+          <td class="tableSchool">${stu.schoolCollege}</td>
+          <td class="tableAddress">${stu.address}, ${stu.pincode}</td>
+        </tr>`
+  }).join('');
+}
 
 // add member dialog open and close event listeners
 
@@ -211,18 +236,31 @@ aboutSection.innerHTML += abvpQuizData
   )
   .join("");
 
+// function of loading
+
+function loader(load, btn){
+  if(load == true){
+    btn.disabled = true; // Disable the button while loading
+    btn.textContent = "Submitting..."; // Change button text to indicate loading
+    btn.style.backgroundColor = "#ccc"; // Change button color to indicate loading
+    btn.style.cursor = "not-allowed"; // Change cursor to indicate loading
+    btn.style.pointerEvents = "none"; // Prevent pointer events while loading
+  }
+  else{
+    btn.disabled = false;
+    btn.textContent = 'Submit';
+    btn.style.backgroundColor = '#007bff';
+    btn.style.cursor = 'pointer';
+    btn.style.pointerEvents = 'all';
+  }
+}
+
 // Member form submission event listener
 
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault();
   let isLoading = true; // Set loading state to true
-  if (isLoading) {
-    submitButton.disabled = true; // Disable the button while loading
-    submitButton.textContent = "Submitting..."; // Change button text to indicate loading
-    submitButton.style.backgroundColor = "#ccc"; // Change button color to indicate loading
-    submitButton.style.cursor = "not-allowed"; // Change cursor to indicate loading
-    submitButton.style.pointerEvents = "none"; // Prevent pointer events while loading
-  }
+  loader(isLoading, submitButton)
 
   const name = document.getElementById("name").value;
   const mobile = document.getElementById("mobileNo").value;
@@ -248,9 +286,15 @@ submitButton.addEventListener("click", async (e) => {
     });
     if (response.ok) {
       isLoading = false; // Set loading state to false
+      loader(isLoading, submitButton);
       console.log("Form submitted successfully");
       console.log("Response:", await response.json());
       memberDailog.close();
+    }
+    else{
+      isLoading = false;
+      loader(isLoading, submitButton);
+      alert('This mobile number is already registered')
     }
   } catch (err) {
     console.error("Error submitting form:", err);
@@ -299,12 +343,18 @@ try{  const username = document.getElementById("adminMobile").value;
     body: JSON.stringify({ username, password }),
   });
   if (response.ok) {
+    getData();
     isLoading = false; // Set loading state to false
     console.log("Admin login successful");
     console.log("Response:", await response.json());
+    adminPanel.showModal();
     adminLoginDialog.close();
   }}
   catch(err){
     console.error("Error during admin login:", err)
   }
 });
+clsAdminPanel.addEventListener('click',()=>{
+  adminPanel.close();
+});
+
