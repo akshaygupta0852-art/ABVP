@@ -10,9 +10,17 @@ app.use(cors())
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const dbURI = process.env.MONGODB_URL // Replace with your MongoDB connection string
-mongoose.connect(dbURI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+const connectDB = async () => {
+  try {
+    // Ensure process.env.MONGO_URI is exactly what you named it in Render
+    await mongoose.connect(dbURI);
+    console.log("MongoDB connected successfully");
+  } catch (error) {
+    console.error("MongoDB connection failed:", error.message);
+  }
+};
+
+connectDB();
 
 // DB schema
 
