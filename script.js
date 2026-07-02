@@ -455,6 +455,7 @@ submitButton.addEventListener("click", async (e) => {
     if (response.ok) {
       isLoading = false; // Set loading state to false
       loader(isLoading, submitButton);
+      alert('Thank you for being a member of ABVP');
       console.log("Form submitted successfully");
       console.log("Response:", await response.json());
       memberDailog.close();
