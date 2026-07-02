@@ -9,7 +9,7 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
-const dbURI = "mongodb://localhost:27017"; // Replace with your MongoDB connection string
+const dbURI = process.env.MONGODB_URL // Replace with your MongoDB connection string
 mongoose.connect(dbURI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));

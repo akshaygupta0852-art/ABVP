@@ -254,8 +254,6 @@ button {
 table{
   margin-top: 30px;
   overflow: scroll;
-  height: 80vh;
-  width: 97vw;
 }
 th{
   font-weight: 600;
