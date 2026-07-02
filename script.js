@@ -330,7 +330,7 @@ const abvpQuizData = [
 
 // Port variable
 
-let port = "http://localhost:5000"; // Default port for local development
+let port = "https://abvp-akshay-backend.onrender.com/"; // Default port for local development
 
 // variable initialization
 
