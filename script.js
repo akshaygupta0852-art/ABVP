@@ -349,6 +349,7 @@ const adminPasswordInput = document.getElementById("adminPassword");
 const adminPanel = document.getElementById('adminPanelDialog');
 const clsAdminPanel = document.getElementById('closeAdminPanelDialog');
 const dataTable = document.getElementById('studentData');
+const imageCarousel = document.getElementById('imgContainer');
 
 
 // fetching data
